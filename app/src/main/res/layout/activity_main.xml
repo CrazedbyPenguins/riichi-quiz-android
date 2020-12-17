@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/windsConstraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_white"
+        android:paddingStart="5dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/roundWindTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Round Wind:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/seatWindTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seat Wind:"
+            app:layout_constraintStart_toStartOf="@id/roundWindTitleTextView"
+            app:layout_constraintTop_toBottomOf="@id/roundWindTitleTextView" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/windsBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="roundWindTitleTextView,seatWindTitleTextView"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="2dp" />
+
+        <TextView
+            android:id="@+id/roundWindTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="東"
+            app:layout_constraintBaseline_toBaselineOf="@id/roundWindTitleTextView"
+            app:layout_constraintStart_toEndOf="@id/windsBarrier" />
+
+        <TextView
+            android:id="@+id/seatWindTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="南"
+            app:layout_constraintBaseline_toBaselineOf="@id/seatWindTitleTextView"
+            app:layout_constraintStart_toStartOf="@id/roundWindTextView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/riichiTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rectangle_white"
+        android:paddingStart="5dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="2dp"
+        android:text="Riichi declared"
+        app:layout_constraintEnd_toEndOf="@id/windsConstraintLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/windsConstraintLayout"
+        app:layout_constraintWidth_min="wrap" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/doraIndicatorsConstraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rectangle_white"
+        android:paddingStart="3dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintStart_toEndOf="@id/windsConstraintLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/doraIndicatorsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="Dora Indicators"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/doraIndicatorsLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/doraIndicatorsTextView">
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                app:srcCompat="@drawable/back" />
+
+            <ImageView
+                android:id="@+id/doraIndicator2ImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                app:srcCompat="@drawable/back" />
+
+            <ImageView
+                android:id="@+id/doraIndicator3ImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                app:srcCompat="@drawable/back" />
+
+            <ImageView
+                android:id="@+id/doraIndicator4ImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                app:srcCompat="@drawable/back" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/uraDoraIndicatorsConstraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/rectangle_white"
+        android:paddingStart="3dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintStart_toEndOf="@id/doraIndicatorsConstraintLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/uraDoraIndicatorsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="UraDora Indicators"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/uraDoraIndicatorsLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/uraDoraIndicatorsTextView">
+
+            <ImageView
+                android:id="@+id/uraDoraIndicator1ImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                app:srcCompat="@drawable/back" />
+
+            <ImageView
+                android:id="@+id/uraDoraIndicator2ImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                app:srcCompat="@drawable/back" />
+
+            <ImageView
+                android:id="@+id/uraDoraIndicator3ImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                app:srcCompat="@drawable/back" />
+
+            <ImageView
+                android:id="@+id/uraDoraIndicator4ImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                app:srcCompat="@drawable/back" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/statisticsConstraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/rectangle_white"
+        android:paddingStart="5dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="2dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/menuImageButton"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/totalHandsTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Hands:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/correctFuTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correct Fu:"
+            app:layout_constraintStart_toStartOf="@id/totalHandsTitleTextView"
+            app:layout_constraintTop_toBottomOf="@id/totalHandsTitleTextView" />
+
+        <TextView
+            android:id="@+id/correctHanTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correct Han:"
+            app:layout_constraintStart_toStartOf="@id/totalHandsTitleTextView"
+            app:layout_constraintTop_toBottomOf="@id/correctFuTitleTextView" />
+
+        <TextView
+            android:id="@+id/correctPaymentsTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correct Payments:"
+            app:layout_constraintStart_toStartOf="@id/totalHandsTitleTextView"
+            app:layout_constraintTop_toBottomOf="@id/correctHanTitleTextView" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/countBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="totalHandsTitleTextView,correctFuTitleTextView,correctHanTitleTextView,correctPaymentsTitleTextView"
+            tools:layout_editor_absoluteX="136dp"
+            tools:layout_editor_absoluteY="2dp" />
+
+        <TextView
+            android:id="@+id/totalHandsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:ems="1"
+            android:text="0"
+            android:textAlignment="textEnd"
+            app:layout_constraintBaseline_toBaselineOf="@id/totalHandsTitleTextView"
+            app:layout_constraintStart_toEndOf="@id/countBarrier" />
+
+        <TextView
+            android:id="@+id/correctFuTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="1"
+            android:text="0"
+            android:textAlignment="textEnd"
+            app:layout_constraintBaseline_toBaselineOf="@id/correctFuTitleTextView"
+            app:layout_constraintStart_toStartOf="@id/totalHandsTextView" />
+
+        <TextView
+            android:id="@+id/correctHanTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="1"
+            android:text="0"
+            android:textAlignment="textEnd"
+            app:layout_constraintBaseline_toBaselineOf="@id/correctHanTitleTextView"
+            app:layout_constraintStart_toStartOf="@id/totalHandsTextView" />
+
+        <TextView
+            android:id="@+id/correctPaymentsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="1"
+            android:text="0"
+            android:textAlignment="textEnd"
+            app:layout_constraintBaseline_toBaselineOf="@id/correctPaymentsTitleTextView"
+            app:layout_constraintStart_toStartOf="@id/totalHandsTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/menuImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:onClick="showPopupMenu"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_menu_black_24dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/riichiDoraBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="riichiTextView,doraIndicatorsConstraintLayout,uraDoraIndicatorsConstraintLayout,statisticsConstraintLayout"
+        tools:layout_editor_absoluteY="639dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/handClosedConstraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rectangle_black"
+        android:paddingStart="3dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/riichiDoraBarrier">
+
+        <TextView
+            android:id="@+id/handClosedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="Closed"
+            android:textAppearance="@android:style/TextAppearance.Material.Inverse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/handClosedLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/handClosedTextView">
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin1" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/handOpenConstraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/rectangle_white"
+        android:paddingStart="3dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="5dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@id/handClosedConstraintLayout"
+        app:layout_constraintTop_toTopOf="@id/handClosedConstraintLayout">
+
+        <TextView
+            android:id="@+id/handOpenTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="Open"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/handOpenLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/handOpenTextView">
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin2" />
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin2" />
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin2" />
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin2" />
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin3" />
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin3" />
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin3" />
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin3" />
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin4" />
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin4" />
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin4" />
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin4" />
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin5" />
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin5" />
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin5" />
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin5" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/handTsumoConstraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rectangle_black"
+        android:paddingStart="4dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="5dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@id/handOpenConstraintLayout"
+        app:layout_constraintTop_toTopOf="@id/handClosedConstraintLayout">
+
+        <TextView
+            android:id="@+id/handTsumoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:text="Tsumo"
+            android:textAppearance="@android:style/TextAppearance.Material.Inverse"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/handTsumoLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/handTsumoTextView"></LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/handRonConstraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rectangle_white"
+        android:paddingStart="4dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="5dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@id/handOpenConstraintLayout"
+        app:layout_constraintTop_toTopOf="@id/handClosedConstraintLayout">
+
+        <TextView
+            android:id="@+id/handRonTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:text="Ron ("
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/handRonWindTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="西"
+            app:layout_constraintBaseline_toBaselineOf="@id/handRonTextView"
+            app:layout_constraintStart_toEndOf="@id/handRonTextView" />
+
+        <TextView
+            android:id="@+id/handRonCloseParenTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=")"
+            app:layout_constraintBaseline_toBaselineOf="@id/handRonTextView"
+            app:layout_constraintStart_toEndOf="@id/handRonWindTextView" />
+
+        <LinearLayout
+            android:id="@+id/handRonLinearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/handRonTextView">
+
+            <ImageView
+                android:id="@+id/doraIndicator1ImageView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/pin1" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/handBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="handClosedConstraintLayout,handOpenConstraintLayout,handTsumoConstraintLayout,handRonConstraintLayout"
+        tools:layout_editor_absoluteY="366dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scoringConstraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rectangle_white"
+        android:paddingTop="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/handBarrier">
+
+        <TextView
+            android:id="@+id/hanTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="3dp"
+            android:text="Han"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/hanEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"
+            android:inputType="number"
+            android:paddingTop="4dp"
+            android:text="4"
+            app:layout_constraintStart_toStartOf="@id/hanTextView"
+            app:layout_constraintTop_toBottomOf="@id/hanTextView" />
+
+        <EditText
+            android:id="@+id/hanAnswerEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"
+            android:enabled="false"
+            android:inputType="number"
+            android:paddingTop="0dp"
+            android:text="4"
+            app:layout_constraintStart_toStartOf="@id/hanTextView"
+            app:layout_constraintTop_toBottomOf="@id/hanEditText" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/hanBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="hanTextView,hanEditText,hanAnswerEditText"
+            tools:layout_editor_absoluteX="218dp"
+            tools:layout_editor_absoluteY="1dp" />
+
+        <TextView
+            android:id="@+id/fuTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:paddingStart="3dp"
+            android:text="Fu"
+            app:layout_constraintBaseline_toBaselineOf="@id/hanTextView"
+            app:layout_constraintStart_toEndOf="@id/hanBarrier" />
+
+        <EditText
+            android:id="@+id/fuEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"
+            android:inputType="number"
+            android:text="40"
+            app:layout_constraintBaseline_toBaselineOf="@id/hanEditText"
+            app:layout_constraintStart_toStartOf="@id/fuTextView" />
+
+        <EditText
+            android:id="@+id/fuAnswerEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="2"
+            android:enabled="false"
+            android:inputType="number"
+            android:text="40"
+            app:layout_constraintBaseline_toBaselineOf="@id/hanAnswerEditText"
+            app:layout_constraintStart_toStartOf="@id/fuTextView" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/fuBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="fuTextView,fuEditText,fuAnswerEditText"
+            tools:layout_editor_absoluteX="218dp"
+            tools:layout_editor_absoluteY="1dp" />
+
+        <TextView
+            android:id="@+id/yakumanTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:paddingStart="3dp"
+            android:text="Yakuman"
+            app:layout_constraintBaseline_toBaselineOf="@id/hanTextView"
+            app:layout_constraintStart_toEndOf="@id/fuBarrier" />
+
+        <CheckBox
+            android:id="@+id/yakumanCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onYakumanCheckBoxClick"
+            app:layout_constraintBaseline_toBaselineOf="@id/hanEditText"
+            app:layout_constraintStart_toStartOf="@id/yakumanTextView" />
+
+        <CheckBox
+            android:id="@+id/yakumanAnswerCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            app:layout_constraintBaseline_toBaselineOf="@id/hanAnswerEditText"
+            app:layout_constraintStart_toStartOf="@id/yakumanTextView" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/yakumanBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="yakumanTextView,yakumanCheckBox,yakumanAnswerCheckBox"
+            tools:layout_editor_absoluteX="218dp"
+            tools:layout_editor_absoluteY="1dp" />
+
+        <TextView
+            android:id="@+id/nonDealerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:paddingStart="3dp"
+            android:text="Non-Dealer"
+            app:layout_constraintBaseline_toBaselineOf="@id/hanTextView"
+            app:layout_constraintStart_toEndOf="@id/yakumanBarrier" />
+
+        <EditText
+            android:id="@+id/nonDealerEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:inputType="number"
+            android:text="4000"
+            app:layout_constraintBaseline_toBaselineOf="@id/hanEditText"
+            app:layout_constraintStart_toStartOf="@id/nonDealerTextView" />
+
+        <EditText
+            android:id="@+id/nonDealerAnswerEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:enabled="false"
+            android:inputType="number"
+            android:text="4000"
+            app:layout_constraintBaseline_toBaselineOf="@id/hanAnswerEditText"
+            app:layout_constraintStart_toStartOf="@id/nonDealerTextView" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/nonDealerBarrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="end"
+            app:constraint_referenced_ids="nonDealerTextView,nonDealerEditText,nonDealerAnswerEditText"
+            tools:layout_editor_absoluteX="246dp"
+            tools:layout_editor_absoluteY="1dp" />
+
+        <TextView
+            android:id="@+id/dealerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:paddingStart="3dp"
+            android:text="Dealer"
+            app:layout_constraintBaseline_toBaselineOf="@id/hanTextView"
+            app:layout_constraintStart_toEndOf="@id/nonDealerBarrier" />
+
+        <EditText
+            android:id="@+id/dealerEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:inputType="number"
+            android:text="2000"
+            app:layout_constraintBaseline_toBaselineOf="@id/hanEditText"
+            app:layout_constraintStart_toStartOf="@id/dealerTextView" />
+
+        <EditText
+            android:id="@+id/dealerAnswerEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:enabled="false"
+            android:inputType="number"
+            android:text="2000"
+            app:layout_constraintBaseline_toBaselineOf="@id/hanAnswerEditText"
+            app:layout_constraintStart_toStartOf="@id/dealerTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:onClick="submitAnswer"
+        android:text="Submit"
+        app:layout_constraintEnd_toStartOf="@id/newHandButton"
+        app:layout_constraintStart_toStartOf="@id/scoringConstraintLayout"
+        app:layout_constraintTop_toBottomOf="@id/scoringConstraintLayout" />
+
+    <Button
+        android:id="@+id/newHandButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="newHand"
+        android:text="New Hand"
+        app:layout_constraintEnd_toEndOf="@+id/scoringConstraintLayout"
+        app:layout_constraintStart_toEndOf="@+id/submitButton"
+        app:layout_constraintTop_toTopOf="@+id/submitButton" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/hanCalculationConstraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rectangle_white"
+        android:paddingStart="5dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/fuCalculationConstraintLayout"
+        app:layout_constraintStart_toEndOf="@id/scoringConstraintLayout"
+        app:layout_constraintTop_toTopOf="@id/scoringConstraintLayout">
+
+        <TextView
+            android:id="@+id/hanCalculationTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Han calculation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:fadeScrollbars="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hanCalculationTitleTextView">
+
+            <TextView
+                android:id="@+id/hanCalculationTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fuCalculationConstraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/rectangle_white"
+        android:paddingStart="5dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/hanCalculationConstraintLayout"
+        app:layout_constraintTop_toTopOf="@id/scoringConstraintLayout">
+
+        <TextView
+            android:id="@+id/fuCalculationTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fu calculation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:fadeScrollbars="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fuCalculationTitleTextView">
+
+            <TextView
+                android:id="@+id/fuCalculationTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
